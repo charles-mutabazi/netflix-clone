@@ -12,6 +12,7 @@
 		56BEFD3A26E1006500EE17DE /* StandardHomeMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BEFD3926E1006500EE17DE /* StandardHomeMovie.swift */; };
 		56BEFD3C26E105E700EE17DE /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BEFD3B26E105E700EE17DE /* HomeVM.swift */; };
 		56C4EC8F26E554CD005132A8 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C4EC8E26E554CD005132A8 /* MovieDetail.swift */; };
+		56D76C2826E61A53008F2751 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D76C2726E61A53008F2751 /* Episode.swift */; };
 		56E1286826DF738C0054D850 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 56E1286726DF738C0054D850 /* Kingfisher */; };
 		56E8222F26E24C080013A5EF /* TopMoviePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E8222E26E24C080013A5EF /* TopMoviePreview.swift */; };
 		56E8223426E25D590013A5EF /* SmallVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E8223326E25D580013A5EF /* SmallVerticalButton.swift */; };
@@ -28,6 +29,7 @@
 		56BEFD3926E1006500EE17DE /* StandardHomeMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardHomeMovie.swift; sourceTree = "<group>"; };
 		56BEFD3B26E105E700EE17DE /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		56C4EC8E26E554CD005132A8 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		56D76C2726E61A53008F2751 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		56E8222E26E24C080013A5EF /* TopMoviePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviePreview.swift; sourceTree = "<group>"; };
 		56E8223326E25D580013A5EF /* SmallVerticalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVerticalButton.swift; sourceTree = "<group>"; };
 		56E8223726E26E860013A5EF /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				56BEFD3526E1003800EE17DE /* Movie.swift */,
+				56D76C2726E61A53008F2751 /* Episode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				56BEFD3826E1004E00EE17DE /* GlobalHelpers.swift in Sources */,
 				56E8223426E25D590013A5EF /* SmallVerticalButton.swift in Sources */,
 				56E8223826E26E860013A5EF /* RectangleButton.swift in Sources */,
+				56D76C2826E61A53008F2751 /* Episode.swift in Sources */,
 				56BEFD3626E1003800EE17DE /* Movie.swift in Sources */,
 				56E8222F26E24C080013A5EF /* TopMoviePreview.swift in Sources */,
 				56C4EC8F26E554CD005132A8 /* MovieDetail.swift in Sources */,

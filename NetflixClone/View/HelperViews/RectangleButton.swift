@@ -12,7 +12,7 @@ struct RectangleButton: View {
     //MARK: PROPERTIES
     var title: String
     var imageName: String
-    var backgroundColor: Color
+    var backgroundColor: Color = .white
     
     
     //
@@ -24,7 +24,7 @@ struct RectangleButton: View {
             HStack {
                 Spacer()
                 Image(systemName: imageName)
-                    .font(.title)
+                    .font(.headline)
                 Text(title)
                     .font(.system(size: 18))
                     .bold()
@@ -32,9 +32,10 @@ struct RectangleButton: View {
             }
             
         }
-        .padding(.vertical, 6)
+        .padding(.vertical, 9)
+        .foregroundColor(backgroundColor == .white ? .black : .white)
         .background(backgroundColor)
-        .cornerRadius(3.0)
+        .cornerRadius(4.0)
         
     }
 }
@@ -45,7 +46,7 @@ struct RectangleButton_Previews: PreviewProvider {
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
-            RectangleButton(title: "Play", imageName: "play.fill", backgroundColor: .white){
+            RectangleButton(title: "Play", imageName: "play.fill"){
                 print("Tapped")
             }
         }
