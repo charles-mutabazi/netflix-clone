@@ -29,6 +29,8 @@ struct Movie : Identifiable{
     var cast: String
     var creators: String
     
+    var moreLikethis: [Movie]
+    
     
     var numberOfSeasonsDisplay: String {
         if let num = numberOfSeasons {

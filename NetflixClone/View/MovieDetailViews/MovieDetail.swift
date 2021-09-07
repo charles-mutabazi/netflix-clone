@@ -56,18 +56,9 @@ struct MovieDetail: View {
                         
                         CastInfo(movie:movie)
                         
-                        HStack(spacing: 60) {
-                            SmallVerticalButton(title: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: false) {
-                                //toggle add to my list
-                            }
-                            SmallVerticalButton(title: "Rating", isOnImage: "hand.thumbsup.fill", isOffImage: "hand.thumbsup", isOn: true) {
-                                //toggle rating
-                            }
-                            SmallVerticalButton(title: "My List", isOnImage: "paperplane", isOffImage: "paperplane", isOn: true) {
-                                //toggle rating
-                            }
-                        }
+                        BottomButtons(movie: movie)
                         
+                        CustomTabSwitcher(tabs: [.episodes, .trailers, .more], movie: movie)
                     }
                 }
                 .padding(.horizontal, 12)
@@ -80,7 +71,7 @@ struct MovieDetail: View {
 //MARK: PREVIEWS
 struct MovieDetail_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetail(movie: exampleMovie5)
+        MovieDetail(movie: exampleMovie1)
     }
 }
 
@@ -157,6 +148,23 @@ struct EpisodeInfo: View {
                 .bold()
                 .padding(.vertical)
             Text(movie.episodeDescriptionDisplay)
+        }
+    }
+}
+
+struct BottomButtons: View {
+    var movie: Movie
+    var body: some View {
+        HStack(spacing: 60) {
+            SmallVerticalButton(title: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: false) {
+                //toggle add to my list
+            }
+            SmallVerticalButton(title: "Rating", isOnImage: "hand.thumbsup.fill", isOffImage: "hand.thumbsup", isOn: true) {
+                //toggle rating
+            }
+            SmallVerticalButton(title: "My List", isOnImage: "paperplane", isOffImage: "paperplane", isOn: true) {
+                //toggle rating
+            }
         }
     }
 }

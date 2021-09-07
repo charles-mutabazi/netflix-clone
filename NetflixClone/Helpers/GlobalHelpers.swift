@@ -18,7 +18,15 @@ let exampleMovie1 = Movie(
     numberOfSeasons: 3,
     defaultEpisodInfo: exampleEpisodeInfo1, promoHeadline: "Watch Season 3 Now",
     cast: "some casts",
-    creators: "Some creators"
+    creators: "Some creators",
+    moreLikethis: [
+        exampleMovie2,
+        exampleMovie3,
+        exampleMovie4,
+        exampleMovie5,
+        exampleMovie6,
+        exampleMovie7,
+    ]
 )
 let exampleMovie2 = Movie(
     id: UUID().uuidString,
@@ -31,7 +39,8 @@ let exampleMovie2 = Movie(
     defaultEpisodInfo: exampleEpisodeInfo1, quality: "HD",
     promoHeadline: "Watch Season 6 Now",
     cast: "some casts",
-    creators: "Some creators"
+    creators: "Some creators",
+    moreLikethis: []
 )
 let exampleMovie3 = Movie(
     id: UUID().uuidString,
@@ -44,7 +53,8 @@ let exampleMovie3 = Movie(
     defaultEpisodInfo: exampleEpisodeInfo1,
     quality: "HD",
     cast: "some casts",
-    creators: "Some creators"
+    creators: "Some creators",
+    moreLikethis: []
 )
 let exampleMovie4 = Movie(
     id: UUID().uuidString,
@@ -57,7 +67,8 @@ let exampleMovie4 = Movie(
     defaultEpisodInfo: exampleEpisodeInfo1,
     promoHeadline: "Season 6 Coming on Friday",
     cast: "some casts",
-    creators: "Some creators"
+    creators: "Some creators",
+    moreLikethis: []
 )
 let exampleMovie5 = Movie(
     id: UUID().uuidString,
@@ -71,7 +82,7 @@ let exampleMovie5 = Movie(
     quality: "HD",
     promoHeadline: "Watch the season finale",
     cast: "Kelly Overtone, Jonathan Scarfe, Rukiya Bernard, Trezzo Mahoro",
-    creators: "Niel Labute"
+    creators: "Niel Labute", moreLikethis: []
 )
 let exampleMovie6 = Movie(
     id: UUID().uuidString,
@@ -82,17 +93,36 @@ let exampleMovie6 = Movie(
     year: 2021,
     defaultEpisodInfo: exampleEpisodeInfo1,
     cast: "some casts",
-    creators: "Some creators"
+    creators: "Some creators",
+    moreLikethis: []
 )
 
-let exampleMovies: [Movie] = [
-    exampleMovie1,
-    exampleMovie2,
-    exampleMovie3,
-    exampleMovie4,
-    exampleMovie5,
-    exampleMovie6
-]
+let exampleMovie7 = Movie(
+    id: UUID().uuidString,
+    name: "Dark",
+    thumbnailURL: URL(string: "https://picsum.photos/200/300/")!,
+    categories: ["Exciting", "Dark", "Chilling", "Suspensful"],
+    rating: "TV-MA",
+    year: 2020,
+    numberOfSeasons: 3,
+    defaultEpisodInfo: exampleEpisodeInfo1, promoHeadline: "Watch Season 3 Now",
+    cast: "some casts",
+    creators: "Some creators",
+    moreLikethis: []
+)
+
+//shuffle the movies everytime
+var exampleMovies: [Movie] {
+    return [
+        exampleMovie1,
+        exampleMovie2,
+        exampleMovie3,
+        exampleMovie4,
+        exampleMovie5,
+        exampleMovie6,
+        exampleMovie7
+    ].shuffled()
+}
 
 let exampleEpisodeInfo1 = CurrentEpisodeInfo(
     episodeName: "Big Mama",
@@ -107,5 +137,13 @@ extension LinearGradient {
         startPoint: .top,
         endPoint: .bottom
     )
+}
+
+extension String {
+    func widthOfString(usingFont font: UIFont) -> CGFloat {
+        let fontAttributes = [NSAttributedString.Key.font: font]
+        let size = self.size(withAttributes: fontAttributes)
+        return size.width
+    }
 }
 
