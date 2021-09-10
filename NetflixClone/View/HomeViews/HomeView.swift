@@ -36,8 +36,7 @@ struct HomeView: View {
                             }
                             ScrollView(.horizontal, showsIndicators: false){
                                 LazyHStack {
-                                    ForEach(vm.getMovies(forCat: category)){
-                                        movie in
+                                    ForEach(vm.getMovies(forCat: category)){ movie in
                                         StandardHomeMovie(movie: movie)
                                             .frame(width: 100, height: 200)
                                             .padding(.horizontal, 20)

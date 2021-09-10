@@ -30,6 +30,7 @@ struct Movie : Identifiable{
     var creators: String
     
     var moreLikethis: [Movie]
+    var trailers: [Trailer]
     
     
     var numberOfSeasonsDisplay: String {

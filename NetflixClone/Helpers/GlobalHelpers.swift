@@ -8,6 +8,32 @@
 import Foundation
 import SwiftUI
 
+let exampleVideoURL = URL(string: "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_640x360.m4v")!
+
+let exampleImageURL1 = URL(string: "https://picsum.photos/300/150")!
+let exampleImageURL2 = URL(string: "https://picsum.photos/300/152")!
+let exampleImageURL3 = URL(string: "https://picsum.photos/300/151")!
+let exampleImageURL4 = URL(string: "https://picsum.photos/300/153")!
+let exampleImageURL5 = URL(string: "https://picsum.photos/300/154")!
+
+let exampleTrailer1 = Trailer(title: "Season 5 Trailer: Van Helsing", imageURL: exampleImageURL1, videoURL: exampleVideoURL)
+let exampleTrailer2 = Trailer(title: "Season 4 Trailer: Van Helsing", imageURL: exampleImageURL2, videoURL: exampleVideoURL)
+let exampleTrailer3 = Trailer(title: "Season 3 Trailer: Van Helsing", imageURL: exampleImageURL3, videoURL: exampleVideoURL)
+let exampleTrailer4 = Trailer(title: "Season 2 Trailer: Van Helsing", imageURL: exampleImageURL4, videoURL: exampleVideoURL)
+let exampleTrailer5 = Trailer(title: "Season 1 Trailer: Van Helsing", imageURL: exampleImageURL5, videoURL: exampleVideoURL)
+
+var exampleTrailers: [Trailer] {
+    [
+        exampleTrailer1,
+        exampleTrailer2,
+        exampleTrailer3,
+        exampleTrailer4,
+        exampleTrailer5,
+    ].shuffled()
+}
+
+
+
 let exampleMovie1 = Movie(
     id: UUID().uuidString,
     name: "Dark",
@@ -26,7 +52,8 @@ let exampleMovie1 = Movie(
         exampleMovie5,
         exampleMovie6,
         exampleMovie7,
-    ]
+    ],
+    trailers: exampleTrailers
 )
 let exampleMovie2 = Movie(
     id: UUID().uuidString,
@@ -40,7 +67,8 @@ let exampleMovie2 = Movie(
     promoHeadline: "Watch Season 6 Now",
     cast: "some casts",
     creators: "Some creators",
-    moreLikethis: []
+    moreLikethis: [],
+    trailers: exampleTrailers
 )
 let exampleMovie3 = Movie(
     id: UUID().uuidString,
@@ -54,7 +82,8 @@ let exampleMovie3 = Movie(
     quality: "HD",
     cast: "some casts",
     creators: "Some creators",
-    moreLikethis: []
+    moreLikethis: [],
+    trailers: exampleTrailers
 )
 let exampleMovie4 = Movie(
     id: UUID().uuidString,
@@ -68,7 +97,8 @@ let exampleMovie4 = Movie(
     promoHeadline: "Season 6 Coming on Friday",
     cast: "some casts",
     creators: "Some creators",
-    moreLikethis: []
+    moreLikethis: [],
+    trailers: exampleTrailers
 )
 let exampleMovie5 = Movie(
     id: UUID().uuidString,
@@ -82,7 +112,8 @@ let exampleMovie5 = Movie(
     quality: "HD",
     promoHeadline: "Watch the season finale",
     cast: "Kelly Overtone, Jonathan Scarfe, Rukiya Bernard, Trezzo Mahoro",
-    creators: "Niel Labute", moreLikethis: []
+    creators: "Niel Labute", moreLikethis: [],
+    trailers: exampleTrailers
 )
 let exampleMovie6 = Movie(
     id: UUID().uuidString,
@@ -94,7 +125,8 @@ let exampleMovie6 = Movie(
     defaultEpisodInfo: exampleEpisodeInfo1,
     cast: "some casts",
     creators: "Some creators",
-    moreLikethis: []
+    moreLikethis: [],
+    trailers: exampleTrailers
 )
 
 let exampleMovie7 = Movie(
@@ -108,7 +140,8 @@ let exampleMovie7 = Movie(
     defaultEpisodInfo: exampleEpisodeInfo1, promoHeadline: "Watch Season 3 Now",
     cast: "some casts",
     creators: "Some creators",
-    moreLikethis: []
+    moreLikethis: [],
+    trailers: exampleTrailers
 )
 
 //shuffle the movies everytime
