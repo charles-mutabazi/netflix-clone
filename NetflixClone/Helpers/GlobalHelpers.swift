@@ -32,6 +32,60 @@ var exampleTrailers: [Trailer] {
     ].shuffled()
 }
 
+let episode1 = Episode(
+    name: "Help Me",
+    season: 1,
+    episodeNumber: 1, thumbnailURL: exampleImageURL1,
+    description: "Waking from a coma, Vanessa finds lone soldier Axel protecting her from a vampire apocalypse called \"The Rising\" and discovers she has unusual powers.",
+    length: 44,
+    videoURL: exampleVideoURL
+)
+
+let episode2 = Episode(
+    name: "Seen You",
+    season: 1,
+    episodeNumber: 2, thumbnailURL: exampleImageURL4,
+    description: "Three years before her awakening, Vanessa is a single mom in Seattle when a volcanic eruption and a rash of killings signal the start of \"The Rising.\"",
+    length: 42,
+    videoURL: exampleVideoURL
+)
+
+let episode3 = Episode(
+    name: "Stay Inside",
+    season: 1,
+    episodeNumber: 3, thumbnailURL: exampleImageURL2,
+    description: "When their UV light source is damaged, Vanessa and Axel must scavenge outside for parts. Flesh reveals the truth about Vanessa to his former comrades.",
+    length: 43,
+    videoURL: exampleVideoURL
+)
+
+let episode4 = Episode(
+    name: "Begun Again",
+    season: 2,
+    episodeNumber: 1, thumbnailURL: exampleImageURL4,
+    description: "Vanessa's long-awaited reunion with Dylan isn't what she dreamed it would be. A barely alive Dmitri flees, while others meet a final reckoning.",
+    length: 43,
+    videoURL: exampleVideoURL
+)
+
+let episode5 = Episode(
+    name: "In Redmption",
+    season: 2,
+    episodeNumber: 5, thumbnailURL: exampleImageURL1,
+    description: "Mohamad rescues Vanessa and Dylan, who then have a fateful clash with Julius. Two long-lost survivors reunite, but neither are who they once were.",
+    length: 44,
+    videoURL: exampleVideoURL
+)
+
+let  episode6 = Episode(
+    name: "Love Bites",
+    season: 2,
+    episodeNumber: 2, thumbnailURL: exampleImageURL1,
+    description: "Vanessa's attempts to keep Dylan alive force her to make a series of wrenching choices. A mysterious vampire assails a group of juvenile delinquents.",
+    length: 44,
+    videoURL: exampleVideoURL
+)
+
 
 
 let exampleMovie1 = Movie(
@@ -42,7 +96,9 @@ let exampleMovie1 = Movie(
     rating: "TV-MA",
     year: 2020,
     numberOfSeasons: 3,
-    defaultEpisodInfo: exampleEpisodeInfo1, promoHeadline: "Watch Season 3 Now",
+    defaultEpisodInfo: exampleEpisodeInfo1,
+    episodes: [episode1, episode2, episode3, episode4, episode5, episode6],
+    promoHeadline: "Watch Season 3 Now",
     cast: "some casts",
     creators: "Some creators",
     moreLikethis: [
@@ -109,6 +165,7 @@ let exampleMovie5 = Movie(
     year: 2020,
     numberOfSeasons: 5,
     defaultEpisodInfo: exampleEpisodeInfo1,
+    episodes: [episode1, episode2, episode3, episode4, episode5, episode6],
     quality: "HD",
     promoHeadline: "Watch the season finale",
     cast: "Kelly Overtone, Jonathan Scarfe, Rukiya Bernard, Trezzo Mahoro",

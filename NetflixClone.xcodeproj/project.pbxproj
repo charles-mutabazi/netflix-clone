@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		563E3A4A26FB643100F2798E /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563E3A4926FB643100F2798E /* EpisodeView.swift */; };
 		56B20CC226EB975100B5B766 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B20CC126EB975100B5B766 /* Trailer.swift */; };
 		56B20CC426EB99B600B5B766 /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B20CC326EB99B600B5B766 /* SwiftUIVideoView.swift */; };
 		56B20CC726EB9BB000B5B766 /* VideoPreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B20CC626EB9BB000B5B766 /* VideoPreviewImage.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		563E3A4926FB643100F2798E /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
 		56B20CC126EB975100B5B766 /* Trailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
 		56B20CC326EB99B600B5B766 /* SwiftUIVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIVideoView.swift; sourceTree = "<group>"; };
 		56B20CC626EB9BB000B5B766 /* VideoPreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewImage.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				56F92E3626E7AFE2004F1AF0 /* CustomTabSwitcher.swift */,
 				56F92E3826E7C27B004F1AF0 /* MoreLikeThis.swift */,
 				56B20CC826EBA05D00B5B766 /* TrailerList.swift */,
+				563E3A4926FB643100F2798E /* EpisodeView.swift */,
 			);
 			path = MovieDetailViews;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				56B20CC426EB99B600B5B766 /* SwiftUIVideoView.swift in Sources */,
 				56B20CC926EBA05D00B5B766 /* TrailerList.swift in Sources */,
 				56F92E3726E7AFE2004F1AF0 /* CustomTabSwitcher.swift in Sources */,
+				563E3A4A26FB643100F2798E /* EpisodeView.swift in Sources */,
 				56D76C2826E61A53008F2751 /* Episode.swift in Sources */,
 				56BEFD3626E1003800EE17DE /* Movie.swift in Sources */,
 				56E8222F26E24C080013A5EF /* TopMoviePreview.swift in Sources */,

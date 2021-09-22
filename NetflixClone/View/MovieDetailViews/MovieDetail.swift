@@ -11,6 +11,9 @@ struct MovieDetail: View {
     //MARK: PROPERTIES
     var movie: Movie
     
+    @State private var showSeasonPicker = false
+    @State private var selectedSeason = 1
+    
     var screen = UIScreen.main.bounds
     
     //MARK: BODY
@@ -18,53 +21,93 @@ struct MovieDetail: View {
         ZStack {
             Color.black.ignoresSafeArea(.all)
             
-            VStack {
-                HStack {
-                    Spacer()
-                    Button(action: {}, label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.system(size: 34))
-                    })
-                }
-                .padding(.trailing, 16)
-                
-                StandardHomeMovie(movie: movie)
-                    .frame(width: screen.width, height: 250, alignment: .center)
-                    .clipped() // for cropping
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading) {
-                        Text(movie.name)
-                            .font(.system(size: 23))
-                            .bold()
-                        MovieInfoSubheadline(movie: movie)
-                        if movie.promoHeadline != nil {
-                            Text(movie.promoHeadline!)
-                                .font(.system(size: 19))
-                                .bold()
-                        }
-                        
-                        RectangleButton(title: "Play", imageName: "play.fill") {
-                            //play action
-                        }
-                        
-                        RectangleButton(title: "Download", imageName: "arrow.down.to.line.alt", backgroundColor: .gray) {
-                            //play action
-                        }
-                        
-                        EpisodeInfo(movie: movie)
-                        
-                        CastInfo(movie:movie)
-                        
-                        BottomButtons(movie: movie)
-                        
-                        CustomTabSwitcher(tabs: [.episodes, .trailers, .more], movie: movie)
+            ZStack {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button(action: {}, label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 34))
+                        })
                     }
+                    .padding(.trailing, 16)
+                    
+                    StandardHomeMovie(movie: movie)
+                        .frame(width: screen.width, height: 250, alignment: .center)
+                        .clipped() // for cropping
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(alignment: .leading) {
+                            Text(movie.name)
+                                .font(.system(size: 23))
+                                .bold()
+                            MovieInfoSubheadline(movie: movie)
+                            if movie.promoHeadline != nil {
+                                Text(movie.promoHeadline!)
+                                    .font(.system(size: 19))
+                                    .bold()
+                            }
+                            
+                            RectangleButton(title: "Play", imageName: "play.fill") {
+                                //play action
+                            }
+                            
+                            RectangleButton(title: "Download", imageName: "arrow.down.to.line.alt", backgroundColor: .gray) {
+                                //play action
+                            }
+                            
+                            EpisodeInfo(movie: movie)
+                            
+                            CastInfo(movie:movie)
+                            
+                            BottomButtons(movie: movie)
+                            
+                            CustomTabSwitcher(tabs: [.episodes, .trailers, .more], movie: movie, selectedSeason: $selectedSeason, showSeasonPicker: $showSeasonPicker)
+                        }
+                    }
+                    .padding(.horizontal, 12)
+                    Spacer()
                 }
-                .padding(.horizontal, 12)
-                Spacer()
             }
-        }.foregroundColor(.white)
+            .foregroundColor(.white)
+
+            //the overlay modal
+            
+            if(showSeasonPicker){
+                Group {
+                    Color.black.opacity(0.9)
+                    VStack(spacing: 40) {
+                        Spacer()
+                        
+                        ForEach(0..<(movie.numberOfSeasons ?? 0)) { season in
+                            Button(action: {
+                                self.selectedSeason = season + 1
+                                self.showSeasonPicker = false
+                            }, label: {
+                                Text("Season \(season + 1)")
+                                    .bold()
+                                    .font(self.selectedSeason == season + 1 ? .title: .title3)
+                                    .foregroundColor(self.selectedSeason == season + 1 ? .white: .gray)
+                            })
+                        }
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            self.showSeasonPicker = false
+                        }, label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 60))
+                        })
+                        .padding(.bottom, 50)
+                    }
+                    .foregroundColor(.white)
+                }
+                .ignoresSafeArea()
+                
+            }
+        }
+        
     }
 }
 
@@ -100,8 +143,8 @@ struct RatingView: View {
         ZStack{
             Rectangle()
                 .fill(Color.gray)
-                .frame(width: 30, height: 20)
-                .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                .frame(width: 50, height: 20)
+                .cornerRadius(3.0)
             Text(rating)
                 .font(.system(size: 10))
                 .bold()
